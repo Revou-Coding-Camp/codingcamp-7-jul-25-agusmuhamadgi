@@ -11,31 +11,51 @@
      <!-- Tailwind CSS CDN -->
      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="flex flex-col justtify-evenly">
+<body class="flex flex-col items-center justify-evenly min-h-screen bg-gray-100">
     <!-- Hero Website -->
     <header>
-        <h1 class="text-lxl font-bold">Todo list</h1>
+        <h1 class="text-3xl font-bold">Todo list</h1>
     </header>
 
     <main class="py-[16px] rounded">
         <!-- Todo Input -->
-         <form class="flex justify-between items-center gap-2 p-4" id="todo-form">
-            <input type="text" class="border rounded p-[4px]" id="todo-input" placeholder="Add a new todo..." required>
-            <input type="date" class="border rounded p-[4px]" id="todo-date" required>
-            <button type="submit">Add Todo</button>
+         <form class="flex justify-between p-[8px]">
+            <div class="flex gap-[8px]">
+                <input type="text" id="task-input" class="border rounded p-[4px] bg-white" placeholder="Add a new task..." required>
+                <input type="date" id="due-date-date" class="border rounded p-[4px] bg-white" placeholder="Due date"  required>
+            </div>
+            
+            <button type="button" class="bg-blue-500 text-white p-[4px] rounded w-[50px]"
+            onclick="addTask();">+</button>
          </form>
-        <!-- Todo List -->
-         <section>
-            <div>
-                <button></button>
+         
+         <!-- Todo Actions -->
+         <section class="flex justify-between p-[8px]">
+            <div class="flex gap-[8px]">
+                <button class="bg-green-500 text-white p-[4px] rounded" onclick="markAllAsDone();">Show Completed</button>
+                <button class="bg-yellow-500 text-white p-[4px] rounded" onclick="showCompletedTasks();">Show All</button>
+                
             </div>
 
-            <button></button>
+            <button class="bg-red-500 text-white p-[4px] rounded" onclick="deleteAllTasks();">Delete All</button>
+
+         </section>
+
+        <!-- Todo List -->
+         <section>
+            <header>
+                <h2 class="text-xl font-bold">Tasks</h2>
+            </header>
+
+            <!-- Task List -->
+             <div>
+                <p>Task is Empty!</p>
+             </div>
          </section>
     </main>
 
     <footer>
-        <span> 2025 Agus. All Right Reserverd.</span>
+        <span>© 2025 Agus. All Right Reserverd.</span>
     </footer>
     <!-- JavaScript External -->
     <script src="js/script.js"></script>
