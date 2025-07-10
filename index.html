@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Agus</title>
+
+    <!-- Link External CSS -->
+     <link rel="stylesheet" href="css/style.css">
+
+     <!-- Tailwind CSS CDN -->
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="flex flex-col justtify-evenly">
+    <!-- Hero Website -->
+    <header>
+        <h1 class="text-lxl font-bold">Todo list</h1>
+    </header>
+
+    <main class="py-[16px] rounded">
+        <!-- Todo Input -->
+         <form class="flex justify-between items-center gap-2 p-4" id="todo-form">
+            <input type="text" class="border rounded p-[4px]" id="todo-input" placeholder="Add a new todo..." required>
+            <input type="date" class="border rounded p-[4px]" id="todo-date" required>
+            <button type="submit">Add Todo</button>
+         </form>
+        <!-- Todo List -->
+         <section>
+            <div>
+                <button></button>
+            </div>
+
+            <button></button>
+         </section>
+    </main>
+
+    <footer>
+        <span> 2025 Agus. All Right Reserverd.</span>
+    </footer>
+    <!-- JavaScript External -->
+    <script src="js/script.js"></script>
+</body>
+</html>
