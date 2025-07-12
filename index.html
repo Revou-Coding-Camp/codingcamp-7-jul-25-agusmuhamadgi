@@ -1,63 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo Agus</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Todo Agus</title>
 
-    <!-- Link External CSS -->
-     <link rel="stylesheet" href="css/style.css">
-
-     <!-- Tailwind CSS CDN -->
-     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="flex flex-col items-center justify-evenly min-h-screen bg-gray-100">
-    <!-- Hero Website -->
-    <header>
-        <h1 class="text-3xl font-bold">Todo list</h1>
-    </header>
+<body class="flex items-center justify-center min-h-screen bg-[#0f172a] text-white font-sans">
 
-    <main class="py-[16px] rounded">
-        <!-- Todo Input -->
-         <form class="flex justify-between p-[8px]">
-            <div class="flex gap-[8px]">
-                <input type="text" id="task-input" class="border rounded p-[4px] bg-white" placeholder="Add a new task..." required>
-                <input type="date" id="due-date-date" class="border rounded p-[4px] bg-white" placeholder="Due date"  required>
-            </div>
-            
-            <button type="button" class="bg-blue-500 text-white p-[4px] rounded w-[50px]"
-            onclick="addTask();">+</button>
-         </form>
-         
-         <!-- Todo Actions -->
-         <section class="flex justify-between p-[8px]">
-            <div class="flex gap-[8px]">
-                <button class="bg-green-500 text-white p-[4px] rounded" onclick="markAllAsDone();">Show Completed</button>
-                <button class="bg-yellow-500 text-white p-[4px] rounded" onclick="showCompletedTasks();">Show All</button>
-                
-            </div>
+  <!-- Container -->
+  <main class="bg-[#1e293b] p-6 rounded-lg shadow-lg w-full max-w-lg">
+    <!-- Title -->
+    <h1 class="text-2xl font-semibold text-center mb-4">Todo List</h1>
 
-            <button class="bg-red-500 text-white p-[4px] rounded" onclick="deleteAllTasks();">Delete All</button>
+    <!-- Input Section -->
+    <form class="flex flex-col sm:flex-row gap-2 mb-4">
+      <input type="text" id="task-input" placeholder="Add a note..." class="flex-1 bg-[#0f172a] text-white border border-gray-600 rounded px-3 py-2 placeholder-gray-400" required>
+      <input type="date" id="due-date" class="bg-[#0f172a] text-white border border-gray-600 rounded px-3 py-2" required>
+      <button type="button" onclick="addTask();" class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded">+</button>
+    </form>
 
-         </section>
+    <!-- Action Buttons -->
+    <div class="flex justify-between mb-4 flex-wrap gap-2">
+      <div class="flex gap-2">
+        <button class="bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded text-sm" onclick="filterTasks('completed')">Show Completed</button>
+        <button class="bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-2 rounded text-sm" onclick="filterTasks('pending')">Show Pending</button>
+        <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-2 rounded text-sm" onclick="filterTasks('all')">Show All</button>
+      </div>
+      <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded text-sm" onclick="deleteAllTasks()">Delete All</button>
+    </div>
 
-        <!-- Todo List -->
-         <section>
-            <header>
-                <h2 class="text-xl font-bold">Tasks</h2>
-            </header>
+    <!-- Task Table -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm text-left">
+        <thead class="bg-gray-700 text-white">
+          <tr>
+            <th class="px-3 py-2">Task</th>
+            <th class="px-3 py-2">Due Date</th>
+            <th class="px-3 py-2">Status</th>
+            <th class="px-3 py-2">Action</th>
+          </tr>
+        </thead>
+        <tbody id="task-table-body">
+          <tr>
+            <td colspan="4" class="text-center text-gray-400 py-4">No task found</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
 
-            <!-- Task List -->
-             <div>
-                <p>Task is Empty!</p>
-             </div>
-         </section>
-    </main>
+  <!-- Footer -->
+  <footer class="absolute bottom-4 text-gray-500 text-xs text-center w-full">
+    © 2025 Agus. All Rights Reserved.
+  </footer>
 
-    <footer>
-        <span>© 2025 Agus. All Right Reserverd.</span>
-    </footer>
-    <!-- JavaScript External -->
-    <script src="js/script.js"></script>
+  <!-- External Script -->
+  <script src="js/script.js"></script>
 </body>
 </html>
